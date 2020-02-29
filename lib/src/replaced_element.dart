@@ -376,6 +376,7 @@ ReplacedElement parseReplacedElement(dom.Element element) {
         src: element.attributes['src'],
         width: double.tryParse(element.attributes['width'] ?? ""),
         height: double.tryParse(element.attributes['height'] ?? ""),
+        node: element
       );
     case "img":
       return ImageContentElement(
