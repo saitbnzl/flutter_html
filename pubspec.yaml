@@ -19,9 +19,6 @@ dependencies:
   video_player: ^0.10.2+1
   chewie: ^0.9.8
 
-  # Plugin for rendering the <iframe> tag.
-  webview_flutter: ^0.3.14+1
-
   # Plugins for rendering the <audio> tag.
   chewie_audio: ^1.0.0+1
 
