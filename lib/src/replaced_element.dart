@@ -152,30 +152,6 @@ class ImageContentElement extends ReplacedElement {
   }
 }
 
-/// [IframeContentElement is a [ReplacedElement] with web content.
-class IframeContentElement extends ReplacedElement {
-  final String src;
-  final double width;
-  final double height;
-
-  IframeContentElement({
-    String name,
-    Style style,
-    this.src,
-    this.width,
-    this.height,
-    dom.Element node,
-  }) : super(name: name, style: style, node: node);
-
-  @override
-  Widget toWidget(RenderContext context) {
-    return Container(
-      width: width ?? (height ?? 150) * 2,
-      height: height ?? (width ?? 300) / 2,
-    );
-  }
-}
-
 /// [AudioContentElement] is a [ContentElement] with an audio file as its content.
 class AudioContentElement extends ReplacedElement {
   final List<String> src;
@@ -361,13 +337,6 @@ ReplacedElement parseReplacedElement(dom.Element element) {
       return TextContentElement(
         text: "\n",
         style: Style(whiteSpace: WhiteSpace.PRE),
-      );
-    case "iframe":
-      return IframeContentElement(
-        name: "iframe",
-        src: element.attributes['src'],
-        width: double.tryParse(element.attributes['width'] ?? ""),
-        height: double.tryParse(element.attributes['height'] ?? ""),
       );
     case "img":
       return ImageContentElement(

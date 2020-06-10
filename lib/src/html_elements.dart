@@ -79,7 +79,6 @@ const REPLACED_ELEMENTS = [
   "audio",
   "br",
   "head",
-  "iframe",
   "img",
   "svg",
   "template",
