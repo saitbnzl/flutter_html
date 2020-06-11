@@ -34,7 +34,12 @@ InteractableElement parseInteractableElement(
       interactableElement.href = element.attributes['href'];
       interactableElement.style = Style(
         color: Colors.blue,
-        textDecoration: TextDecoration.underline,
+        textDecoration: element.children
+                    .where((element) => element.localName == "img")
+                    .length >
+                0
+            ? TextDecoration.none
+            : TextDecoration.underline,
       );
       break;
   }
